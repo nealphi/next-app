@@ -3,8 +3,6 @@ import prisma from "@/prisma/client";
 import { z } from "zod";
 import { createIssueSchema } from "@/app/validationSchemas";
 
-
-
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const validation = createIssueSchema.safeParse(body);
@@ -16,3 +14,9 @@ export async function POST(request: NextRequest) {
   });
   return NextResponse.json(newIssue, { status: 201 });
 }
+
+
+// export async function GET(request:NextRequest){
+//   const result = await prisma.issue.findMany()
+//  return NextResponse.json(result, { status: 201 })
+// }
