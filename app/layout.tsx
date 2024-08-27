@@ -29,7 +29,7 @@ export default function RootLayout({
           {" "}
           <Navbar />
           <main>{children}</main>
-          {/* <ThemePanel /> */}
+          <ThemePanel />
         </Theme>
       </body>
     </html>
