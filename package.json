@@ -26,6 +26,8 @@
     "fast-sort": "^3.4.1",
     "monorepo": "github:radix-ui/themes",
     "next": "14.2.6",
+    "next-auth": "^4.24.7",
+    "next-cloudinary": "^6.10.1",
     "postcss": "8.4.41",
     "prisma": "^5.18.0",
     "react": "18.3.1",
