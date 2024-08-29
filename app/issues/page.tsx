@@ -42,7 +42,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
 
   // await delay(2000);
   return (
-    <div>
+    <div className="m-5">
       <IssueActions />
       <Table.Root variant="surface">
         <Table.Header>
@@ -69,7 +69,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
               <Table.Cell>
                 <Link href={`/issues/${issue.id}`}>{issue.title}</Link>
 
-                <div className="block md:hidden">
+                <div className="block my-2 md:hidden">
                   <IssueStatusBadge status={issue.status} />
                 </div>
               </Table.Cell>
