@@ -23,6 +23,15 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
 
   if (error) return null;
 
+  const assignIssue = (userId: String) => {
+    if ( userId !== "null") 
+    axios.patch(`/api/issues/${issue.id}`, { assignedToUserId: userId})
+  else axios.patch(`/api/issues/${issue.id}`, { assignedToUserId: null})
+  .catch(() => {
+    toast.error('Changes could not be saved.')
+  })
+  }
+
   //with React Query we no loger need state and effect hooks
   // const [users, setUsers] = useState<User[]>([]);
 
@@ -35,18 +44,12 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
   //   fetchUsers()
   // }, []);
 
+  
   return (
     <>
     <Select.Root
     defaultValue={issue.assignedToUserId || "null"}
-      onValueChange={(userId) => {
-        if ( userId !== "null") 
-        axios.patch(`/api/issues/${issue.id}`, { assignedToUserId: userId})
-      else axios.patch(`/api/issues/${issue.id}`, { assignedToUserId: null})
-      .catch(() => {
-        toast.error('Changes could not be saved.')
-      })
-      }}
+      onValueChange={assignIssue}
     >
       <Select.Trigger placeholder="Assign..." />
       <Select.Content>
