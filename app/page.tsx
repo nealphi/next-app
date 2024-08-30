@@ -1,4 +1,5 @@
 import React from "react";
+import LatestIssues from "./LatestIssues";
 
 interface Props {
   searchParams: {
@@ -7,5 +8,7 @@ interface Props {
 }
 
 export default function Home({searchParams: {page}}: Props) {
-  return <div></div>
+  return <div>
+    <LatestIssues/>
+  </div>
 }
