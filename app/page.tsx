@@ -5,6 +5,7 @@ import prisma from "@/prisma/client";
 import { Status } from "@prisma/client";
 import IssueChart from "./IssueChart";
 import { Flex, Grid } from "@radix-ui/themes";
+import { Metadata } from "next";
 
 interface Props {
   searchParams: {
@@ -27,4 +28,10 @@ export default async function Home({ searchParams: { page } }: Props) {
         <LatestIssues/>
     </Grid>
   );
+}
+
+
+export const metadata: Metadata = {
+  title: 'Issue Tracker - Dashboard',
+  description: 'View a summary of project issues'
 }
