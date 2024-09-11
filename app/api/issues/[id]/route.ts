@@ -53,3 +53,4 @@ export async function DELETE(request: NextRequest, { params: { id } }: Props) {
   });
   return NextResponse.json({});
 }
+

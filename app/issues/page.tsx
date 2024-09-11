@@ -12,6 +12,7 @@ interface Props {
 }
 
 const IssuesPage = async ({ searchParams }: Props) => {
+  // validate the status
   const statuses = Object.values(Status);
   const status = statuses.includes(searchParams.status)
     ? searchParams.status
@@ -48,7 +49,9 @@ const IssuesPage = async ({ searchParams }: Props) => {
   );
 };
 
+//to render the page dynamicly
 export const dynamic = "force-dynamic";
+ 
 export default IssuesPage;
 
 export const metadata: Metadata = {
